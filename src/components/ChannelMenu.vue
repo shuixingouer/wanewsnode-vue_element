@@ -1,7 +1,7 @@
 <template>
   <div class="channel-menu">
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item v-for="item in channel" :index="item.id" @click="cutOff(item.id)">{{item.channel_name}}</el-menu-item>
+      <el-menu-item v-for="item in channel" :key="item.id" :index="item.id" @click="cutOff(item.id)">{{item.channel_name}}</el-menu-item>
     </el-menu>
   </div>
 </template>
@@ -50,6 +50,6 @@ export default {
     font-size:18px;
     line-height:50px;
     height:50px;
-    padding:0px 10px;
+    padding:0 10px;
   }
 </style>

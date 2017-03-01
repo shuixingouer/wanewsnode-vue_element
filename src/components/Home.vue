@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <img class="logo" src="./../assets/images/logo.png">
     <channel-menu></channel-menu>
     <list></list>
   </div>

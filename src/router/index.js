@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from 'components/Home'
-import List from 'components/List'
-import ChannelMenu from 'components/ChannelMenu'
+import Home from '../components/Home'
+import Details from '../components/Details'
 
 Vue.use(Router)
 
@@ -14,14 +13,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/List',
-      name: 'List',
-      component: List
-    },
-    {
-      path: '/ChannelMenu',
-      name: 'ChannelMenu',
-      component: ChannelMenu
+      path: '/details',
+      name: 'Details',
+      component: Details
     }
   ]
 })
