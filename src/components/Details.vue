@@ -1,29 +1,26 @@
 <template>
   <div class="details">
     <el-row :gutter="20">
-      {{item.body}}
+      {{ detailsData[0].body }}
     </el-row>
   </div>
 </template>
 
 <script>
-  import { bus } from '../bus.js'
   export default {
     name: 'details',
     data () {
       return {
-        detailsData: [],
-        objectId: '0'
+        detailsData: []
       }
     },
     created () {
-      this.getDetails(0)
-      bus.$on('objectId', (text) => {
-        this.getDetails(text)
-      })
+      console.log(this.$route.query.id)
+      this.getDetails(this.$route.query.id)
     },
     methods: {
       getDetails: function (id) {
+        console.log(id)
         this.$http.post('/api/static/detail/' + id, {id: id}).then((response) => {
           this.detailsData = response.body
           console.log(response)

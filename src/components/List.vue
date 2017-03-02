@@ -1,7 +1,7 @@
 <template>
   <div class="list">
     <el-row :gutter="20"  v-for="item in listData" :key="item.object_id">
-      <router-link to="/details" @click="cutOff(item.object_id)">
+      <router-link :to="{ path: '/details?id='+ item.object_id }">
         <el-card :body-style="{ padding:'20px 25px', overflow:'hidden' }">
           <el-col :span="7">
             <img v-bind:src="item.image_src_url" class="image">
@@ -34,10 +34,6 @@
       })
     },
     methods: {
-      cutOff: function (index) {
-        bus.$emit('objectId', index)
-        console.log(index)
-      },
       getLists: function (id) {
         this.$http.post('/api/channel/' + id, {id: id}).then((response) => {
           this.listData = response.body
