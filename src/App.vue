@@ -21,9 +21,4 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-  .logo{
-    display:block;
-    width:130px;
-    margin:7px auto;
-  }
 </style>

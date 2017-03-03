@@ -41,15 +41,19 @@ export default {
 <style scoped>
   .el-menu{
     overflow:auto;
-    height:50px;
+    height:44px;
     white-space:nowrap;
+    box-sizing:border-box;
   }
   .el-menu--horizontal .el-menu-item{
     display:inline-block;
     float:none;
-    font-size:18px;
-    line-height:50px;
-    height:50px;
+    font-size:15px;
+    line-height:44px;
+    height:44px;
     padding:0 10px;
+  }
+  .el-menu--horizontal > .el-menu-item:hover{
+    border-width:3px;
   }
 </style>
